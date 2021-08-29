@@ -1,12 +1,12 @@
 
 
-export const addTodo=(note)=>({
-    type:'todo/add',
+export const addTask=(note)=>({
+    type:'task/add',
     payload:note
 })
 
 
 export const removeTodo=(id)=>({
-    type:"todo/remove",
+    type:"task/remove",
     payload:id
 })

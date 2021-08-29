@@ -15,6 +15,6 @@ export const Spacing={
     sm:8,
     md:14,
     lg:24,
-    xlg:30,
+    xlg:36,
 }
 

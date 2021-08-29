@@ -8,34 +8,47 @@ import {
   FlatList,
   Dimensions,
 } from "react-native";
+import TodoList from "../components/todoList.component";
 import { Button, Searchbar, FAB } from "react-native-paper";
 import { Colors, FontSize,Spacing } from "../theme/theme";
-
+import { useDispatch,useSelector} from "react-redux";
+import Task from "../models/task.model";
+import { addTask } from "../redux/actions/todo.action";
+import TaskModal from "./task.screen";
 export default function HomeScreen() {
+  const dispatch=useDispatch()
+  console.log(useSelector((state)=>{console.log(state)}))
+  
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
       <Text style={styles.text}>TODO</Text>
       <Searchbar placeholder="Search" style={styles.searchBar} />
       <View style={styles.listContainer}>
-        <FlatList />
+        <FlatList/>
         <View style={styles.fabView}>
           <FAB
             style={styles.fab}
+            color={Colors.text}
+            animated={true}
             icon="plus"
             onPress={() => {
-              console.log("FAB Clicked");
+              dispatch(addTask(new Task('testing','checking test')))
+            }}
+            onLongPress={()=>{
+              console.log('Long Press')
             }}
           />
         </View>
       </View>
+      
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Spacing.xlg,
+    paddingVertical: Spacing.xlg,
     paddingHorizontal:Spacing.lg,
     flex: 1,
     backgroundColor: Colors.background,
@@ -53,6 +66,7 @@ const styles = StyleSheet.create({
     marginTop:Spacing.sm
   },
   fabView: {
-    paddingBottom:50
+    paddingBottom:100,
+
   },
 });

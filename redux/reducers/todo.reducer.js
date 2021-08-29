@@ -1,15 +1,24 @@
 
 const INITIAL_STATE={
-    todo:[]
+    todos:[],
+    
 }
 
 const todoReducer=(state=INITIAL_STATE,action)=>{
     switch (action.type) {
-        case "todo/add":
-            console.log("todo/app")
+        case "task/add":
+            
+            return{
+                ...state,
+                todos:[
+                    ...state.todos,
+                    action.payload
+                ]
+            }
             break;
-        case "todo/remove":
+        case "task/remove":
             console.log("todo/remove")
+            return {...state}
         break;
         default:
         return{...state}
