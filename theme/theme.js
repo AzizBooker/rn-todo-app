@@ -1,7 +1,11 @@
  export const Colors={
     background:"#254441",
     accent:"#61988E",
-    text:"#f5f5f5"
+    text:"#f5f5f5",
+    transparent:'rgba(1,1,1,0)',
+    red:'#ff0000',
+    yellow:"#FFFF00",
+    blue:"#0000FF"
 }
 
 export const FontSize={

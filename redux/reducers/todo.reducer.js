@@ -1,6 +1,19 @@
-
+import Task from "../../models/task.model";
+import Priority from "../../enums/priority.enum";
 const INITIAL_STATE={
-    todos:[],
+    todos:[
+        new Task('First Task!','Check This first task!',Priority.p1),
+        new Task('Second Task!','Check This first task'),
+        new Task('Second Task!','Check This first task'),
+        new Task('Second Task!','Check This first task'),
+        new Task('Second Task!','Check This first task'),
+        new Task('Second Task!','Check This first task'),
+        new Task('Second Task!','Check This first task'),
+        new Task('Second Task!','Check This first task'),
+        new Task('Second Task!','Check This first task'),
+        new Task('Second Task!','Check This first task'),
+    
+    ],
     
 }
 

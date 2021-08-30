@@ -15,9 +15,10 @@ import { useDispatch,useSelector} from "react-redux";
 import Task from "../models/task.model";
 import { addTask } from "../redux/actions/todo.action";
 import TaskModal from "./task.screen";
+
 export default function HomeScreen() {
   const dispatch=useDispatch()
-  console.log(useSelector((state)=>{console.log(state)}))
+  //console.log(useSelector((state)=>{console.log(state)}))
   
   return (
     <SafeAreaView style={styles.container}>
@@ -25,7 +26,7 @@ export default function HomeScreen() {
       <Text style={styles.text}>TODO</Text>
       <Searchbar placeholder="Search" style={styles.searchBar} />
       <View style={styles.listContainer}>
-        <FlatList/>
+        <TodoList/>
         <View style={styles.fabView}>
           <FAB
             style={styles.fab}
@@ -66,7 +67,11 @@ const styles = StyleSheet.create({
     marginTop:Spacing.sm
   },
   fabView: {
-    paddingBottom:100,
 
   },
+  fab:{
+    position:'absolute',
+    top:100,
+    left:100,
+  }
 });

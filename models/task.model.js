@@ -1,12 +1,16 @@
 import { uniqueId } from "lodash";
 import Priority from "../enums/priority.enum";
 export default class Task{
-    constructor(title,description,subtasks=null,priority=Priority.none) {
+    constructor(title,description,priority,subtasks=null) {
     this.uuid=uniqueId()
     this.title=title
     this.description=description
     this.subtasks=subtasks
     this.priority=priority
+
+    if(priority==null){
+        this.priority=Priority.none
+    }
     }
 
         addSubtasks(subtask){
