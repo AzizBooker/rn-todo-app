@@ -3,9 +3,9 @@
     accent:"#61988E",
     text:"#f5f5f5",
     transparent:'rgba(1,1,1,0)',
-    red:'#ff0000',
-    yellow:"#FFFF00",
-    blue:"#0000FF"
+    red:'#e63946',
+    yellow:"#ffb703",
+    blue:"#457b9d"
 }
 
 export const FontSize={

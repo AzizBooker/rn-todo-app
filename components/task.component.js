@@ -21,7 +21,7 @@ const TaskComponent = (props) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.roundButton}onPress={()=>{console.log('click on id:',Task.uuid)}} />
+      <TouchableOpacity style={{...styles.roundButton,borderColor:priorityColor}} onPress={()=>{console.log('click on id:',Task.uuid)}} />
       <View style={styles.textContainer}>
         <Text style={styles.tile}>{Task.title}</Text>
         <Text style={styles.description}>{Task.description}</Text>
@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
   roundButton: {
     backgroundColor:Colors.transparent,
     borderColor:Colors.text,
-    borderWidth:2,
+    borderWidth:1.5,
     marginRight:Spacing.md,
     alignSelf:'center',
-    width:25,
-    height:25,
+    width:20,
+    height:20,
     borderRadius:200
   },
 });

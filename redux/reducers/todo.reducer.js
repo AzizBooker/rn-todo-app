@@ -3,24 +3,17 @@ import Priority from "../../enums/priority.enum";
 const INITIAL_STATE={
     todos:[
         new Task('First Task!','Check This first task!',Priority.p1),
-        new Task('Second Task!','Check This first task'),
-        new Task('Second Task!','Check This first task'),
-        new Task('Second Task!','Check This first task'),
-        new Task('Second Task!','Check This first task'),
-        new Task('Second Task!','Check This first task'),
-        new Task('Second Task!','Check This first task'),
-        new Task('Second Task!','Check This first task'),
-        new Task('Second Task!','Check This first task'),
-        new Task('Second Task!','Check This first task'),
+        
     
     ],
+    visible:true
     
 }
 
 const todoReducer=(state=INITIAL_STATE,action)=>{
     switch (action.type) {
         case "task/add":
-            
+            console.log('Dispatch Payload:',action.payload)
             return{
                 ...state,
                 todos:[
@@ -32,6 +25,12 @@ const todoReducer=(state=INITIAL_STATE,action)=>{
         case "task/remove":
             console.log("todo/remove")
             return {...state}
+        break;
+        case "modal/toggleVisible":
+        return{
+            ...state,
+            visible:!state.visible
+        }
         break;
         default:
         return{...state}

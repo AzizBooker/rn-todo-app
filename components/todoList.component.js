@@ -13,14 +13,14 @@ const TodoList = (props) => {
     }
   return (
     
-      <FlatList style={styles.container} data={data} renderItem={renderItem}  />
+      <FlatList style={styles.container} data={data} renderItem={renderItem}  keyExtractor={(item)=> item.uuid} />
   );
 };
 
 const styles=StyleSheet.create({
     container:{
         height:300,
-        marginTop:Spacing.sm
+        marginVertical:Spacing.md
     }
 
 })
